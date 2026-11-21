@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Catatan harian perjalanan belajar Git dan GitHub, mulai dari kendala commit hingga push melalui VS Code.">
+
+    <title>Catatan Belajar GitHub — 21 November 2026</title>
+
+    <style>
+        :root {
+            --bg: #0c0f14;
+            --surface: #131821;
+            --surface-light: #1a2230;
+            --text: #e5eaf2;
+            --muted: #929eae;
+            --accent: #58a6ff;
+            --border: #273142;
+            --green: #3fb950;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(100% - 40px, 780px);
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        header {
+            border-bottom: 1px solid var(--border);
+            background: rgba(12, 15, 20, 0.95);
+        }
+
+        nav {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-label {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* Main content */
+
+        main {
+            padding: 75px 0 90px;
+        }
+
+        .category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .category::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: var(--green);
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: clamp(32px, 6vw, 48px);
+            line-height: 1.2;
+            letter-spacing: -1.8px;
+            margin-bottom: 18px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+
+        .metadata {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            padding: 17px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 40px;
+        }
+
+        .article {
+            font-size: 15px;
+            color: #c3ccd8;
+        }
+
+        .article p {
+            margin-bottom: 22px;
+        }
+
+        .article h2 {
+            color: var(--text);
+            font-size: 19px;
+            margin: 38px 0 14px;
+            letter-spacing: -0.4px;
+        }
+
+        .article ul {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+            margin: 20px 0 30px;
+        }
+
+        .article li {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .article li strong {
+            display: block;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .note {
+            background: rgba(88, 166, 255, 0.07);
+            border-left: 3px solid var(--accent);
+            padding: 18px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 32px;
+        }
+
+        .note p {
+            margin: 0;
+        }
+
+        .note strong {
+            color: var(--accent);
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding-top: 50px;
+            }
+
+            .metadata {
+                gap: 10px 16px;
+            }
+
+            .article {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">My<span>Journal</span>.</a>
+                <span class="nav-label">Personal Learning Notes</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="category">Learning Journal</div>
+
+        <h1>Belajar GitHub:<br>Pengalaman Pertama Menghadapi Kendala</h1>
+
+        <p class="subtitle">
+            Sebuah catatan tentang proses belajar menggunakan Git,
+            GitHub, dan Visual Studio Code.
+        </p>
+
+        <div class="metadata">
+            <span>21 November 2026</span>
+            <span>Sabtu</span>
+            <span>IT Learning</span>
+            <span>Reading time: 2 min</span>
+        </div>
+
+        <article class="article">
+
+            <p>
+                Hari ini, Sabtu, 21 November 2026, saya bersama tim IT
+                dan pembina IT, Pak Zul, mengalami kegagalan saat
+                mencoba melakukan <em>commit</em> dan <em>push</em>
+                dari Visual Studio Code ke GitHub.
+                Dalam proses pembelajaran ini, ada beberapa kendala
+                yang kami temui.
+            </p>
+
+            <h2>Kendala yang Dihadapi</h2>
+
+            <ul>
+                <li>
+                    <strong>1. Aplikasi yang Terhapus Setelah Komputer Restart</strong>
+                    Salah satu kendala berasal dari komputer di
+                    laboratorium TKJ. Setiap kali pengguna atau siswa
+                    menginstal aplikasi desktop, seperti Adobe Premiere
+                    dan aplikasi lainnya, proses instalasi berhasil
+                    dan aplikasi bahkan bisa digunakan selama
+                    pembelajaran berlangsung. Namun, setelah komputer
+                    di-restart, aplikasi yang sebelumnya diinstal
+                    justru hilang.
+                </li>
+
+                <li>
+                    <strong>2. Kendala Saat Pendaftaran Akun GitHub</strong>
+                    Kendala lainnya terjadi sejak tahap awal,
+                    yaitu ketika melakukan pendaftaran akun GitHub.
+                    Beberapa kali percobaan pendaftaran mengalami
+                    kegagalan. Hal ini diduga berkaitan dengan
+                    terlalu seringnya percobaan pendaftaran dari
+                    alamat IP yang sama dalam waktu yang sangat
+                    singkat, bahkan kurang dari 3 detik.
+                </li>
+            </ul>
+
+            <h2>Catatan Pembelajaran</h2>
+
+            <p>
+                Dari kejadian hari ini, saya menyadari bahwa belajar
+                Git dan GitHub tidak selalu berjalan lancar.
+                Selain memahami perintah seperti <em>commit</em>
+                dan <em>push</em>, kita juga perlu memahami kondisi
+                perangkat dan jaringan yang digunakan.
+            </p>
+
+            <div class="note">
+                <p>
+                    <strong>Kesimpulan hari ini</strong><br>
+                    Belum berhasil melakukan commit dan push bukan
+                    berarti proses belajar berhenti. Pengalaman
+                    menghadapi kendala ini menjadi bagian dari
+                    pembelajaran saya dalam mengenal GitHub lebih jauh.
+                </p>
+            </div>
+
+        </article>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <span>© 2026 MyJournal</span>
+            <span>Built with HTML & CSS</span>
+        </div>
+    </footer>
+
+</body>
+</html>
+
